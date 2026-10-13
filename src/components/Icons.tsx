@@ -33,6 +33,7 @@ import {
   Copy,
   Eye,
   TrendingUp,
+  Home,
 } from 'lucide-react';
 import Svg, { Rect, Circle } from 'react-native-svg';
 
@@ -81,4 +82,5 @@ export {
   Copy,
   Eye,
   TrendingUp,
+  Home,
 };

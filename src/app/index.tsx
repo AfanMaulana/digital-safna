@@ -6,6 +6,7 @@ import {
   ScrollView,
   Image,
   TouchableOpacity,
+  useWindowDimensions,
 } from 'react-native';
 import { useRouter } from 'expo-router';
 import { PRODUCTS, getImageSource, formatRupiah } from '@/data/products';
@@ -26,6 +27,8 @@ import {
 
 export default function LandingPage() {
   const router = useRouter();
+  const { width } = useWindowDimensions();
+  const isMobile = width < 768;
   const [heroMotifIdx, setHeroMotifIdx] = useState(0);
   const [activeOotdTab, setActiveOotdTab] = useState<string>('street-y2k');
   const currentOotd = OOTD_LOOKS[activeOotdTab] || OOTD_LOOKS['street-y2k'];
@@ -83,13 +86,13 @@ export default function LandingPage() {
             </View>
 
             {/* Headline */}
-            <Text style={styles.heroHeadline}>
+            <Text style={[styles.heroHeadline, isMobile && styles.heroHeadlineMobile]}>
               Bye-Bye &quot;Tenggelam&quot;!{'\n'}
               <Text style={styles.heroHeadlineHighlight}>Rahasia Kaki Kelihatan Lebih Jenjang Instan ✨</Text>
             </Text>
 
             {/* Sub-headline */}
-            <Text style={styles.heroSubheadline}>
+            <Text style={[styles.heroSubheadline, isMobile && styles.heroSubheadlineMobile]}>
               A.F. VEST — Outer Potongan Crop yang Didesain Khusus Memperbaiki Proporsi Tubuh Long Torso Kamu (1:2 Golden Ratio). Always Slay, No Cap 🔥
             </Text>
 
@@ -159,7 +162,7 @@ export default function LandingPage() {
               })}
             </View>
 
-            <View style={styles.heroImageCard}>
+            <View style={[styles.heroImageCard, isMobile && styles.heroImageCardMobile]}>
               <Image
                 source={getImageSource(PRODUCTS[heroMotifIdx].images[0])}
                 style={styles.heroMainImage}
@@ -590,7 +593,7 @@ const styles = StyleSheet.create({
   },
   heroLeft: {
     flex: 1.2,
-    minWidth: 320,
+    minWidth: 280,
   },
   heroBadge: {
     flexDirection: 'row',
@@ -616,6 +619,11 @@ const styles = StyleSheet.create({
     letterSpacing: -0.5,
     marginBottom: 16,
   },
+  heroHeadlineMobile: {
+    fontSize: 27,
+    lineHeight: 35,
+    marginBottom: 12,
+  },
   heroHeadlineHighlight: {
     color: THEME.colors.terracotta,
   },
@@ -624,6 +632,11 @@ const styles = StyleSheet.create({
     color: THEME.colors.textMuted,
     lineHeight: 26,
     marginBottom: 28,
+  },
+  heroSubheadlineMobile: {
+    fontSize: 14,
+    lineHeight: 22,
+    marginBottom: 22,
   },
   heroCtaGroup: {
     flexDirection: 'row',
@@ -687,7 +700,7 @@ const styles = StyleSheet.create({
   },
   heroRight: {
     flex: 1,
-    minWidth: 320,
+    minWidth: 280,
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -704,6 +717,10 @@ const styles = StyleSheet.create({
     shadowRadius: 30,
     borderWidth: 2,
     borderColor: '#FFFFFF',
+  },
+  heroImageCardMobile: {
+    height: 380,
+    maxWidth: 360,
   },
   heroMainImage: {
     width: '100%',

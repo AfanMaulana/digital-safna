@@ -81,3 +81,16 @@ html, body {
 .card-hover:hover {
   transform: translateY(-4px);
 }
+
+/* Responsive Navbar & Layout Helpers */
+@media (max-width: 859px) {
+  .hide-on-mobile {
+    display: none !important;
+  }
+}
+
+@media (min-width: 860px) {
+  .hide-on-desktop {
+    display: none !important;
+  }
+}
