@@ -5,7 +5,11 @@
   "cleanUrls": true,
   "rewrites": [
     {
-      "source": "/(.*)",
+      "source": "/produk/:id",
+      "destination": "/produk/[id].html"
+    },
+    {
+      "source": "/((?!_expo|assets|favicon.ico).*)",
       "destination": "/index.html"
     }
   ]

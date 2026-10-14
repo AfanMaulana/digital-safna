@@ -27,6 +27,10 @@ import {
   CheckCircle2,
 } from '@/components/Icons';
 
+export function generateStaticParams(): { id: string }[] {
+  return PRODUCTS.map((p) => ({ id: p.id }));
+}
+
 export default function ProductDetailPage() {
   const { id } = useLocalSearchParams();
   const router = useRouter();
