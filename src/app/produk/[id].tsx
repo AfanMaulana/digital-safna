@@ -14,8 +14,6 @@ import { useCart } from '@/context/CartContext';
 import ProductCard from '@/components/ProductCard';
 import PageContainer from '@/components/PageContainer';
 import {
-  Star,
-
   ShoppingBag,
   MessageCircle,
   ShieldCheck,
@@ -98,29 +96,31 @@ export default function ProductDetailPage() {
               </View>
             </View>
 
-            {/* Interactive Thumbnails */}
-            <View style={styles.thumbnailsRow}>
-              {product.images.map((imgUri, index) => {
-                const isSelected = selectedImageIndex === index;
-                return (
-                  <TouchableOpacity
-                    key={index}
-                    onPress={() => setSelectedImageIndex(index)}
-                    style={[
-                      styles.thumbnailWrapper,
-                      isSelected && styles.thumbnailSelected,
-                    ]}
-                    activeOpacity={0.8}
-                  >
-                    <Image
-                      source={getImageSource(imgUri)}
-                      style={styles.thumbnailImage}
-                      resizeMode="cover"
-                    />
-                  </TouchableOpacity>
-                );
-              })}
-            </View>
+            {/* Interactive Thumbnails (only if multiple images) */}
+            {product.images.length > 1 && (
+              <View style={styles.thumbnailsRow}>
+                {product.images.map((imgUri, index) => {
+                  const isSelected = selectedImageIndex === index;
+                  return (
+                    <TouchableOpacity
+                      key={index}
+                      onPress={() => setSelectedImageIndex(index)}
+                      style={[
+                        styles.thumbnailWrapper,
+                        isSelected && styles.thumbnailSelected,
+                      ]}
+                      activeOpacity={0.8}
+                    >
+                      <Image
+                        source={getImageSource(imgUri)}
+                        style={styles.thumbnailImage}
+                        resizeMode="cover"
+                      />
+                    </TouchableOpacity>
+                  );
+                })}
+              </View>
+            )}
           </View>
 
           {/* Right Column: Product Info & Actions */}
@@ -132,24 +132,6 @@ export default function ProductDetailPage() {
 
             {/* Product Title */}
             <Text style={styles.productName}>{product.name}</Text>
-
-            {/* Rating & Sold count */}
-            <View style={styles.ratingRow}>
-              <View style={styles.starGroup}>
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} size={15} color="#F59E0B" fill="#F59E0B" />
-                ))}
-              </View>
-              <Text style={styles.ratingNumber}>{product.rating.toFixed(1)}</Text>
-              {product.reviewsCount > 0 && (
-                <>
-                  <Text style={styles.ratingDivider}>•</Text>
-                  <Text style={styles.reviewCountText}>{product.reviewsCount} Ulasan</Text>
-                </>
-              )}
-              <Text style={styles.ratingDivider}>•</Text>
-              <Text style={styles.soldBadgeText}>{product.soldCount}</Text>
-            </View>
 
             {/* Price Box */}
             <View style={styles.priceBox}>
@@ -262,10 +244,6 @@ export default function ProductDetailPage() {
                   <View style={styles.specRow}>
                     <Text style={styles.specKey}>Lingkar Dada (LD):</Text>
                     <Text style={styles.specValue}>{product.lingkarDada} (Dual tie ribbons)</Text>
-                  </View>
-                  <View style={styles.specRow}>
-                    <Text style={styles.specKey}>Panjang Vest:</Text>
-                    <Text style={styles.specValue}>± {product.panjang} (Pas di pinggang atas)</Text>
                   </View>
                   <View style={styles.specRow}>
                     <Text style={styles.specKey}>Jenis Material:</Text>
@@ -475,32 +453,6 @@ const styles = StyleSheet.create({
     fontWeight: '800',
     color: THEME.colors.textMain,
     lineHeight: 34,
-  },
-  ratingRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 8,
-  },
-  starGroup: {
-    flexDirection: 'row',
-    gap: 2,
-  },
-  ratingNumber: {
-    fontSize: 13,
-    fontWeight: '700',
-    color: THEME.colors.textMain,
-  },
-  ratingDivider: {
-    color: THEME.colors.textLight,
-  },
-  reviewCountText: {
-    fontSize: 13,
-    color: THEME.colors.textMuted,
-  },
-  soldBadgeText: {
-    fontSize: 12,
-    fontWeight: '700',
-    color: THEME.colors.sageDark,
   },
   priceBox: {
     backgroundColor: '#FFFFFF',

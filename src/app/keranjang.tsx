@@ -165,7 +165,7 @@ export default function CartPage() {
                             Motif: {product.motif}
                           </Text>
                           <Text style={styles.itemSpecs}>
-                            LD: {product.lingkarDada} • P: {product.panjang}
+                            LD: {product.lingkarDada}
                           </Text>
                         </View>
 

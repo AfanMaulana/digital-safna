@@ -127,7 +127,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
       `*${product.name}*`,
       `Jumlah: ${quantity} pcs (${formatRupiah(product.price * quantity)})`,
       `Motif: ${product.motif}`,
-      `Ukuran: LD ${product.lingkarDada}, Panjang ${product.panjang}`,
+      `Ukuran: LD ${product.lingkarDada}`,
       '',
       'Apakah stok masih ready kak? Mohon info total biaya & ongkirnya ya! Terima kasih 🤍',
     ].join('\n');

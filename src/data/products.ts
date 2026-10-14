@@ -63,8 +63,6 @@ export const PRODUCTS: Product[] = [
     ],
     images: [
       vestPastelBloom,
-      'https://images.unsplash.com/photo-1578932750294-f5075e85f44a?q=80&w=900&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=900&auto=format&fit=crop',
     ],
   },
   {
@@ -90,12 +88,10 @@ export const PRODUCTS: Product[] = [
       'Motif Classic Botanical Floral mawar klasik & peony warm earth-tone',
       'Aksen separuh polos broken white dengan bordir klasik eksklusif',
       'Tali pita depan fleksibel bisa disesuaikan lingkar dada',
-      'Panjang 42 cm pas di pinggang atas (high-waist)',
+      'Model crop vest cantik pas di pinggang atas (high-waist)',
     ],
     images: [
       vestVintagePeony,
-      'https://images.unsplash.com/photo-1558769132-cb1aea458c5e?q=80&w=900&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=900&auto=format&fit=crop',
     ],
   },
   {
@@ -125,8 +121,6 @@ export const PRODUCTS: Product[] = [
     ],
     images: [
       vestSunnySunflower,
-      'https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?q=80&w=900&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1508427953056-b00b8d78ebf5?q=80&w=900&auto=format&fit=crop',
     ],
   },
   {
@@ -157,8 +151,6 @@ export const PRODUCTS: Product[] = [
     ],
     images: [
       vestRetroDitsy,
-      'https://images.unsplash.com/photo-1492707892479-7bc8d5a4ee93?q=80&w=900&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=900&auto=format&fit=crop',
     ],
   },
 ];

@@ -4,7 +4,7 @@ import { useRouter } from 'expo-router';
 import { Product, formatRupiah, getImageSource } from '@/data/products';
 import { THEME } from '@/constants/theme';
 import { useCart } from '@/context/CartContext';
-import { Star, ShoppingBag, Eye } from '@/components/Icons';
+import { ShoppingBag, Eye } from '@/components/Icons';
 
 interface ProductCardProps {
   product: Product;
@@ -41,18 +41,6 @@ export default function ProductCard({ product }: ProductCardProps) {
 
       {/* Product Details */}
       <View style={styles.detailsContainer}>
-        {/* Rating & Sold */}
-        <View style={styles.metaRow}>
-          <View style={styles.ratingBox}>
-            <Star size={13} color="#F59E0B" fill="#F59E0B" />
-            <Text style={styles.ratingText}>{product.rating.toFixed(1)}</Text>
-            {product.reviewsCount > 0 ? (
-              <Text style={styles.reviewsCount}>({product.reviewsCount})</Text>
-            ) : null}
-          </View>
-          <Text style={styles.soldText}>{product.soldCount}</Text>
-        </View>
-
         {/* Title */}
         <Pressable onPress={handleCardPress}>
           <Text style={styles.productTitle} numberOfLines={2}>
@@ -69,9 +57,6 @@ export default function ProductCard({ product }: ProductCardProps) {
         <View style={styles.sizeTagRow}>
           <View style={styles.sizePill}>
             <Text style={styles.sizePillText}>LD: {product.lingkarDada}</Text>
-          </View>
-          <View style={styles.sizePill}>
-            <Text style={styles.sizePillText}>P: {product.panjang}</Text>
           </View>
         </View>
 
@@ -172,30 +157,6 @@ const styles = StyleSheet.create({
   detailsContainer: {
     padding: 16,
     gap: 8,
-  },
-  metaRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-  },
-  ratingBox: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 4,
-  },
-  ratingText: {
-    fontSize: 12,
-    fontWeight: '700',
-    color: THEME.colors.textMain,
-  },
-  reviewsCount: {
-    fontSize: 11,
-    color: THEME.colors.textLight,
-  },
-  soldText: {
-    fontSize: 11,
-    color: THEME.colors.textMuted,
-    fontWeight: '600',
   },
   productTitle: {
     fontSize: 15,

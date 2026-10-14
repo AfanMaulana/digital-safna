@@ -416,12 +416,6 @@ export default function LandingPage() {
       <View style={styles.socialProofSection}>
         <View style={styles.statsRow}>
           <View style={styles.statBox}>
-            <Text style={styles.statNumber}>0</Text>
-            <Text style={styles.statLabel}>Crop Vest Terjual</Text>
-          </View>
-          <View style={styles.statDivider} />
-
-          <View style={styles.statBox}>
             <Text style={styles.statNumber}>10 Pcs</Text>
             <Text style={styles.statLabel}>Stok per Varian</Text>
           </View>
