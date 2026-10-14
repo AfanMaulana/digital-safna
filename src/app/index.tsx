@@ -412,8 +412,8 @@ export default function LandingPage() {
         </View>
       </View>
 
-      {/* 5. STATS & SOCIAL PROOF */}
-      <View id="testimoni" style={styles.socialProofSection}>
+      {/* 5. STATS */}
+      <View style={styles.socialProofSection}>
         <View style={styles.statsRow}>
           <View style={styles.statBox}>
             <Text style={styles.statNumber}>100+</Text>
@@ -1167,88 +1167,6 @@ const styles = StyleSheet.create({
     width: 1,
     height: 36,
     backgroundColor: THEME.colors.creamBorder,
-  },
-  testimonialsGrid: {
-    maxWidth: 1200,
-    width: '100%',
-    alignSelf: 'center',
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    gap: 24,
-    justifyContent: 'center',
-  },
-  testimonialCard: {
-    flex: 1,
-    minWidth: 300,
-    maxWidth: 380,
-    backgroundColor: '#FFFFFF',
-    borderRadius: THEME.radius.lg,
-    padding: 24,
-    borderWidth: 1,
-    borderColor: THEME.colors.creamBorder,
-    gap: 14,
-  },
-  testimonialHeader: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 12,
-  },
-  userAvatar: {
-    width: 42,
-    height: 42,
-    borderRadius: 21,
-    backgroundColor: THEME.colors.terracottaLight,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  userAvatarText: {
-    fontSize: 16,
-    fontWeight: '800',
-    color: THEME.colors.terracotta,
-  },
-  userName: {
-    fontSize: 14,
-    fontWeight: '700',
-    color: THEME.colors.textMain,
-  },
-  userHandle: {
-    fontSize: 11,
-    color: THEME.colors.textLight,
-  },
-  starsRow: {
-    flexDirection: 'row',
-    gap: 3,
-  },
-  reviewComment: {
-    fontSize: 13,
-    color: THEME.colors.textMain,
-    lineHeight: 20,
-    fontStyle: 'italic',
-  },
-  testimonialFooter: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    marginTop: 6,
-    paddingTop: 12,
-    borderTopWidth: 1,
-    borderTopColor: THEME.colors.creamWarm,
-  },
-  pillBought: {
-    backgroundColor: THEME.colors.creamWarm,
-    paddingHorizontal: 8,
-    paddingVertical: 4,
-    borderRadius: 6,
-  },
-  pillBoughtText: {
-    fontSize: 10,
-    fontWeight: '600',
-    color: THEME.colors.textMuted,
-  },
-  verifiedText: {
-    fontSize: 11,
-    fontWeight: '700',
-    color: THEME.colors.terracotta,
   },
   ctaBannerSection: {
     paddingVertical: 64,

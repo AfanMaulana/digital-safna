@@ -91,9 +91,6 @@ export default function Footer() {
             <TouchableOpacity onPress={() => router.push('/ootd')} style={styles.linkItem}>
               <Text style={styles.linkText}>Mix &amp; Match OOTD</Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => router.push('/testimoni')} style={styles.linkItem}>
-              <Text style={styles.linkText}>Testimoni Pembeli</Text>
-            </TouchableOpacity>
           </View>
 
           {/* Social Media & Contact */}

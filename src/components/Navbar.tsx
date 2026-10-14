@@ -18,7 +18,6 @@ import {
   Layers,
   Ruler,
   Flame,
-  Star,
   ChevronRight,
 } from '@/components/Icons';
 import { THEME } from '@/constants/theme';
@@ -59,12 +58,6 @@ export default function Navbar() {
       href: '/ootd',
       desc: 'Lookbook Style & Hijab Friendly',
       Icon: Flame,
-    },
-    {
-      label: 'Testimoni',
-      href: '/testimoni',
-      desc: 'Ulasan Kepuasan Pelanggan',
-      Icon: Star,
     },
   ];
 
