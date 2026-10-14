@@ -46,7 +46,9 @@ export default function ProductCard({ product }: ProductCardProps) {
           <View style={styles.ratingBox}>
             <Star size={13} color="#F59E0B" fill="#F59E0B" />
             <Text style={styles.ratingText}>{product.rating.toFixed(1)}</Text>
-            <Text style={styles.reviewsCount}>({product.reviewsCount})</Text>
+            {product.reviewsCount > 0 ? (
+              <Text style={styles.reviewsCount}>({product.reviewsCount})</Text>
+            ) : null}
           </View>
           <Text style={styles.soldText}>{product.soldCount}</Text>
         </View>

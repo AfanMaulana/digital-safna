@@ -141,8 +141,12 @@ export default function ProductDetailPage() {
                 ))}
               </View>
               <Text style={styles.ratingNumber}>{product.rating.toFixed(1)}</Text>
-              <Text style={styles.ratingDivider}>•</Text>
-              <Text style={styles.reviewCountText}>{product.reviewsCount} Ulasan</Text>
+              {product.reviewsCount > 0 && (
+                <>
+                  <Text style={styles.ratingDivider}>•</Text>
+                  <Text style={styles.reviewCountText}>{product.reviewsCount} Ulasan</Text>
+                </>
+              )}
               <Text style={styles.ratingDivider}>•</Text>
               <Text style={styles.soldBadgeText}>{product.soldCount}</Text>
             </View>
@@ -196,7 +200,7 @@ export default function ProductDetailPage() {
                 </TouchableOpacity>
                 <Text style={styles.qtyNumber}>{quantity}</Text>
                 <TouchableOpacity
-                  onPress={() => setQuantity((q) => q + 1)}
+                  onPress={() => setQuantity((q) => Math.min(product.stock, q + 1))}
                   style={styles.qtyBtn}
                 >
                   <Plus size={14} color={THEME.colors.textMain} />
