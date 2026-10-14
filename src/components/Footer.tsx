@@ -109,23 +109,6 @@ export default function Footer() {
               <ExternalLink size={13} color={THEME.colors.textLight} />
             </TouchableOpacity>
 
-            <TouchableOpacity
-              onPress={() => openLink(THEME.contact.tiktokUrl)}
-              style={styles.socialItem}
-            >
-              <View style={styles.tiktokDot} />
-              <Text style={styles.socialText}>TikTok @{THEME.contact.tiktok}</Text>
-              <ExternalLink size={13} color={THEME.colors.textLight} />
-            </TouchableOpacity>
-
-            <TouchableOpacity
-              onPress={() => openLink(THEME.contact.shopeeUrl)}
-              style={styles.socialItem}
-            >
-              <View style={styles.shopeeDot} />
-              <Text style={styles.socialText}>Shopee Mall @{THEME.contact.shopee}</Text>
-              <ExternalLink size={13} color={THEME.colors.textLight} />
-            </TouchableOpacity>
 
             <TouchableOpacity
               onPress={() =>
@@ -295,18 +278,6 @@ const styles = StyleSheet.create({
     fontSize: 13,
     fontWeight: '600',
     color: THEME.colors.textMain,
-  },
-  shopeeDot: {
-    width: 10,
-    height: 10,
-    borderRadius: 5,
-    backgroundColor: THEME.colors.shopeeOrange,
-  },
-  tiktokDot: {
-    width: 10,
-    height: 10,
-    borderRadius: 5,
-    backgroundColor: THEME.colors.tiktokBlack,
   },
   termsCol: {
     flex: 1.3,

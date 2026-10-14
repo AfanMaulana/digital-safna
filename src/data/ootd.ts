@@ -16,7 +16,7 @@ export interface OotdLook {
   badge: string;
   vestName: string;
   vestMotif: string;
-  image: any;
+  image: ImageSourcePropType;
   formula: string[];
   tip: string;
   description: string;

@@ -3,7 +3,6 @@ import {
   View,
   Text,
   StyleSheet,
-  ScrollView,
   TouchableOpacity,
 } from 'react-native';
 import { useRouter } from 'expo-router';
@@ -206,50 +205,6 @@ export default function SolusiPage() {
         </View>
       </View>
 
-      {/* 4. Tabel Perbandingan Head-to-Head */}
-      <View style={styles.tableSection}>
-        <View style={styles.sectionHeader}>
-          <Text style={styles.sectionTitle}>Tabel Perbandingan Head-to-Head</Text>
-        </View>
-
-        <View style={styles.tableCard}>
-          <View style={styles.tableHeaderRow}>
-            <Text style={[styles.thCell, { flex: 1.2 }]}>Aspek Penilaian</Text>
-            <Text style={[styles.thCell, { flex: 1 }]}>Outer Biasa</Text>
-            <Text style={[styles.thCell, { flex: 1.2, color: THEME.colors.terracotta }]}>A.F. VEST</Text>
-          </View>
-
-          <View style={styles.tableRow}>
-            <Text style={[styles.tdCellBold, { flex: 1.2 }]}>Panjang Baju</Text>
-            <Text style={[styles.tdCell, { flex: 1 }]}>55 – 65 cm</Text>
-            <Text style={[styles.tdCellGood, { flex: 1.2 }]}>± 42 cm (Golden Crop)</Text>
-          </View>
-
-          <View style={styles.tableRow}>
-            <Text style={[styles.tdCellBold, { flex: 1.2 }]}>Efek Visual Kaki</Text>
-            <Text style={[styles.tdCell, { flex: 1 }]}>Terpotong / Pendek</Text>
-            <Text style={[styles.tdCellGood, { flex: 1.2 }]}>2x Lebih Jenjang</Text>
-          </View>
-
-          <View style={styles.tableRow}>
-            <Text style={[styles.tdCellBold, { flex: 1.2 }]}>Pengatur Ukuran LD</Text>
-            <Text style={[styles.tdCell, { flex: 1 }]}>Kancing mati / Resleting</Text>
-            <Text style={[styles.tdCellGood, { flex: 1.2 }]}>Tali Depan Adjustable</Text>
-          </View>
-
-          <View style={styles.tableRow}>
-            <Text style={[styles.tdCellBold, { flex: 1.2 }]}>Furing Pelapis</Text>
-            <Text style={[styles.tdCell, { flex: 1 }]}>Jarang ada (kasar)</Text>
-            <Text style={[styles.tdCellGood, { flex: 1.2 }]}>Lapis Furing Adem</Text>
-          </View>
-
-          <View style={styles.tableRow}>
-            <Text style={[styles.tdCellBold, { flex: 1.2 }]}>Tekstur Corak</Text>
-            <Text style={[styles.tdCell, { flex: 1 }]}>Sablon datar</Text>
-            <Text style={[styles.tdCellGood, { flex: 1.2 }]}>3D Relief Embossed</Text>
-          </View>
-        </View>
-      </View>
 
       {/* 5. FAQ Section */}
       <View style={styles.faqSection}>
@@ -542,55 +497,6 @@ const styles = StyleSheet.create({
     fontSize: 13,
     color: THEME.colors.textMuted,
     lineHeight: 20,
-  },
-  tableSection: {
-    paddingVertical: 64,
-    paddingHorizontal: 20,
-  },
-  tableCard: {
-    maxWidth: 860,
-    width: '100%',
-    alignSelf: 'center',
-    backgroundColor: '#FFFFFF',
-    borderRadius: THEME.radius.lg,
-    borderWidth: 1,
-    borderColor: THEME.colors.creamBorder,
-    overflow: 'hidden',
-  },
-  tableHeaderRow: {
-    flexDirection: 'row',
-    backgroundColor: THEME.colors.creamWarm,
-    paddingVertical: 14,
-    paddingHorizontal: 18,
-    borderBottomWidth: 1,
-    borderBottomColor: THEME.colors.creamBorder,
-  },
-  thCell: {
-    fontSize: 13,
-    fontWeight: '800',
-    color: THEME.colors.textMain,
-  },
-  tableRow: {
-    flexDirection: 'row',
-    paddingVertical: 14,
-    paddingHorizontal: 18,
-    borderBottomWidth: 1,
-    borderBottomColor: THEME.colors.creamBorder,
-    alignItems: 'center',
-  },
-  tdCellBold: {
-    fontSize: 13,
-    fontWeight: '700',
-    color: THEME.colors.textMain,
-  },
-  tdCell: {
-    fontSize: 13,
-    color: THEME.colors.textMuted,
-  },
-  tdCellGood: {
-    fontSize: 13,
-    fontWeight: '700',
-    color: THEME.colors.terracotta,
   },
   faqSection: {
     backgroundColor: '#FDFBF7',

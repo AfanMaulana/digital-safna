@@ -3,7 +3,6 @@ import {
   View,
   Text,
   StyleSheet,
-  ScrollView,
   Image,
   TouchableOpacity,
 } from 'react-native';
@@ -111,49 +110,6 @@ export default function OotdPage() {
         </View>
       </View>
 
-      {/* 3. Color Harmony Guide */}
-      <View style={styles.harmonySection}>
-        <View style={styles.sectionHeader}>
-          <Text style={styles.sectionTitle}>Panduan Harmonisasi Warna Bawahan</Text>
-          <Text style={styles.sectionSubtitle}>
-            Bingung memadukan warna celana atau rok dengan motif vest? Ikuti aturan palette ini:
-          </Text>
-        </View>
-
-        <View style={styles.harmonyGrid}>
-          <View style={styles.harmonyCard}>
-            <View style={[styles.colorSquare, { backgroundColor: '#E2D9CE' }]} />
-            <Text style={styles.harmonyTitle}>Neutral Cream / Broken White</Text>
-            <Text style={styles.harmonyDesc}>
-              Warna paling aman &amp; versatile. Membuat motif floral 3D pada vest menjadi pusat perhatian utama.
-            </Text>
-          </View>
-
-          <View style={styles.harmonyCard}>
-            <View style={[styles.colorSquare, { backgroundColor: '#7A91A8' }]} />
-            <Text style={styles.harmonyTitle}>Light to Medium Denim</Text>
-            <Text style={styles.harmonyDesc}>
-              Memberikan sentuhan kasual santai yang awet muda. Sangat cocok dipadukan dengan varian Pastel Bloom atau Sunflower.
-            </Text>
-          </View>
-
-          <View style={styles.harmonyCard}>
-            <View style={[styles.colorSquare, { backgroundColor: '#718D7E' }]} />
-            <Text style={styles.harmonyTitle}>Sage &amp; Olive Green</Text>
-            <Text style={styles.harmonyDesc}>
-              Menonjolkan nuansa Earth-Tone alami yang sejuk. Sangat estetik dipadukan dengan tenunan Vintage Peony.
-            </Text>
-          </View>
-
-          <View style={styles.harmonyCard}>
-            <View style={[styles.colorSquare, { backgroundColor: '#26221F' }]} />
-            <Text style={styles.harmonyTitle}>Deep Charcoal / Black</Text>
-            <Text style={styles.harmonyDesc}>
-              Menciptakan kontras bold ala streetwear. Menyamarkan garis panggul dan memaksimalkan efek jenjang.
-            </Text>
-          </View>
-        </View>
-      </View>
 
       {/* 4. Tips Golden Ratio Sepatu & Tas */}
       <View style={styles.tipsSection}>
@@ -421,11 +377,6 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: '700',
   },
-  harmonySection: {
-    backgroundColor: '#F7F2EB',
-    paddingVertical: 64,
-    paddingHorizontal: 20,
-  },
   sectionHeader: {
     maxWidth: 720,
     width: '100%',
@@ -446,43 +397,6 @@ const styles = StyleSheet.create({
     color: THEME.colors.textMuted,
     textAlign: 'center',
     lineHeight: 22,
-  },
-  harmonyGrid: {
-    maxWidth: 1000,
-    width: '100%',
-    alignSelf: 'center',
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    gap: 20,
-    justifyContent: 'center',
-  },
-  harmonyCard: {
-    flex: 1,
-    minWidth: 220,
-    maxWidth: 240,
-    backgroundColor: '#FFFFFF',
-    padding: 20,
-    borderRadius: THEME.radius.lg,
-    borderWidth: 1,
-    borderColor: THEME.colors.creamBorder,
-    gap: 10,
-  },
-  colorSquare: {
-    width: '100%',
-    height: 48,
-    borderRadius: 8,
-    borderWidth: 1,
-    borderColor: THEME.colors.creamBorder,
-  },
-  harmonyTitle: {
-    fontSize: 14,
-    fontWeight: '700',
-    color: THEME.colors.textMain,
-  },
-  harmonyDesc: {
-    fontSize: 12,
-    color: THEME.colors.textMuted,
-    lineHeight: 18,
   },
   tipsSection: {
     paddingVertical: 64,

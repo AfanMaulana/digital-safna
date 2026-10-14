@@ -3,7 +3,6 @@ import {
   View,
   Text,
   StyleSheet,
-  ScrollView,
   Image,
   TouchableOpacity,
   Pressable,
@@ -27,7 +26,6 @@ import {
   Plus,
   Minus,
   Sparkles,
-  ExternalLink,
   CheckCircle2,
 } from '@/components/Icons';
 
@@ -50,15 +48,6 @@ export default function ProductDetailPage() {
     }
   };
 
-  const handleOpenMarketplace = (platform: 'shopee' | 'tiktok') => {
-    const url =
-      platform === 'shopee'
-        ? THEME.contact.shopeeUrl
-        : THEME.contact.tiktokUrl;
-    if (typeof window !== 'undefined') {
-      window.open(url, '_blank');
-    }
-  };
 
   return (
     <PageContainer style={styles.container} showsVerticalScrollIndicator={false}>
@@ -239,29 +228,6 @@ export default function ProductDetailPage() {
               </TouchableOpacity>
             </View>
 
-            {/* Marketplace Direct Buy */}
-            <View style={styles.marketplaceRow}>
-              <Text style={styles.marketplaceLabel}>Atau checkout di Marketplace resmi:</Text>
-              <View style={styles.marketplaceButtonsGroup}>
-                <TouchableOpacity
-                  onPress={() => handleOpenMarketplace('shopee')}
-                  style={styles.shopeeBtn}
-                  activeOpacity={0.8}
-                >
-                  <Text style={styles.shopeeBtnText}>Beli di Shopee</Text>
-                  <ExternalLink size={13} color="#FFF" />
-                </TouchableOpacity>
-
-                <TouchableOpacity
-                  onPress={() => handleOpenMarketplace('tiktok')}
-                  style={styles.tiktokBtn}
-                  activeOpacity={0.8}
-                >
-                  <Text style={styles.tiktokBtnText}>TikTok Shop</Text>
-                  <ExternalLink size={13} color="#FFF" />
-                </TouchableOpacity>
-              </View>
-            </View>
 
             {/* Specs & Accordion Tabs */}
             <View style={styles.accordionContainer}>
@@ -664,53 +630,6 @@ const styles = StyleSheet.create({
   waDirectBtnText: {
     color: '#FFF',
     fontSize: 15,
-    fontWeight: '700',
-  },
-  marketplaceRow: {
-    backgroundColor: THEME.colors.creamWarm,
-    padding: 14,
-    borderRadius: THEME.radius.md,
-    gap: 10,
-  },
-  marketplaceLabel: {
-    fontSize: 12,
-    fontWeight: '600',
-    color: THEME.colors.textMuted,
-  },
-  marketplaceButtonsGroup: {
-    flexDirection: 'row',
-    gap: 10,
-  },
-  shopeeBtn: {
-    flex: 1,
-    backgroundColor: THEME.colors.shopeeOrange,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    gap: 6,
-    paddingVertical: 10,
-    borderRadius: THEME.radius.md,
-    cursor: 'pointer' as any,
-  },
-  shopeeBtnText: {
-    color: '#FFF',
-    fontSize: 12,
-    fontWeight: '700',
-  },
-  tiktokBtn: {
-    flex: 1,
-    backgroundColor: THEME.colors.tiktokBlack,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    gap: 6,
-    paddingVertical: 10,
-    borderRadius: THEME.radius.md,
-    cursor: 'pointer' as any,
-  },
-  tiktokBtnText: {
-    color: '#FFF',
-    fontSize: 12,
     fontWeight: '700',
   },
   accordionContainer: {

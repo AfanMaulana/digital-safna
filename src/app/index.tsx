@@ -3,7 +3,6 @@ import {
   View,
   Text,
   StyleSheet,
-  ScrollView,
   Image,
   TouchableOpacity,
   useWindowDimensions,
@@ -21,7 +20,6 @@ import {
   MessageCircle,
   CheckCircle2,
   X,
-  Star,
 } from '@/components/Icons';
 
 
@@ -39,38 +37,6 @@ export default function LandingPage() {
 
 
 
-  const testimonials = [
-    {
-      name: 'Nabila Zahra',
-      handle: '@nabilazhr_22',
-      rating: 5,
-      comment:
-        'Jujur aku punya long torso parah, pake outer biasa malah kelihatan pendek. Begitu pake A.F. Vest Pastel Bloom, langsung amazed! Cutting 42 cm nya pas bgt di pinggang atas. Kaki keliatan lebih jenjang 2x lipat pas difoto!',
-      product: 'Pastel Bloom 3D',
-      verified: true,
-      tag: 'Long Torso Solved ✨',
-    },
-    {
-      name: 'Rara Santika',
-      handle: '@rarasntk',
-      rating: 5,
-      comment:
-        'Awalnya liat di FYP TikTok pas ada yang nanya "Piro lek rego ne lek" haha, pas check out ternyata bahannya di luar ekspektasi! Tebal, berfuring adem, motif 3D nya beneran timbul berasa outer mahal butik mall.',
-      product: 'Vintage Peony',
-      verified: true,
-      tag: 'Viral on TikTok 🔥',
-    },
-    {
-      name: 'Keisha Amanda',
-      handle: '@keisha.ootd',
-      rating: 5,
-      comment:
-        'Hijab friendly bgt! Biasanya susah nemu outer crop yang cocok dilayer kemeja tanpa bikin keliatan aneh. Tali depannya bisa disesuaiin sesuka hati, ga sesak sama sekali di dada. Wajib punya semua motif sih!',
-      product: 'Sunny Sunflower',
-      verified: true,
-      tag: 'Hijab Friendly 🌸',
-    },
-  ];
 
   return (
     <PageContainer style={styles.container} showsVerticalScrollIndicator={false}>
@@ -473,62 +439,7 @@ export default function LandingPage() {
           </View>
         </View>
 
-        {/* Section Header */}
-        <View style={[styles.sectionHeader, { marginTop: 48 }]}>
-          <View style={[styles.smallPill, { backgroundColor: THEME.colors.terracottaLight }]}>
-            <Text style={[styles.smallPillText, { color: THEME.colors.terracotta }]}>
-              REAL CUSTOMER STORIES
-            </Text>
-          </View>
-          <Text style={styles.sectionTitle}>Kata Mereka yang Sudah Mencobanya</Text>
-          <Text style={styles.sectionSubtitle}>
-            Ulasan jujur dari pembeli yang akhirnya menemukan outer yang pas untuk memperbaiki proporsi tubuh mereka.
-          </Text>
-        </View>
 
-        {/* Testimonials Cards */}
-        <View style={styles.testimonialsGrid}>
-          {testimonials.map((item, idx) => (
-            <View key={idx} style={styles.testimonialCard}>
-              <View style={styles.testimonialHeader}>
-                <View style={styles.userAvatar}>
-                  <Text style={styles.userAvatarText}>{item.name[0]}</Text>
-                </View>
-                <View>
-                  <Text style={styles.userName}>{item.name}</Text>
-                  <Text style={styles.userHandle}>{item.handle}</Text>
-                </View>
-              </View>
-
-              <View style={styles.starsRow}>
-                {[...Array(item.rating)].map((_, i) => (
-                  <Star key={i} size={14} color="#F59E0B" fill="#F59E0B" />
-                ))}
-              </View>
-
-              <Text style={styles.reviewComment}>&ldquo;{item.comment}&rdquo;</Text>
-
-              <View style={styles.testimonialFooter}>
-                <View style={styles.pillBought}>
-                  <Text style={styles.pillBoughtText}>Varian: {item.product}</Text>
-                </View>
-                <Text style={styles.verifiedText}>{item.tag}</Text>
-              </View>
-            </View>
-          ))}
-        </View>
-
-        {/* Button to /testimoni */}
-        <View style={styles.viewAllWrapper}>
-          <TouchableOpacity
-            onPress={() => router.push('/testimoni')}
-            style={styles.viewAllButton}
-            activeOpacity={0.88}
-          >
-            <Text style={styles.viewAllButtonText}>Lihat Semua Ulasan &amp; Kirim Ceritamu ✨</Text>
-            <ArrowRight size={18} color={THEME.colors.terracotta} />
-          </TouchableOpacity>
-        </View>
       </View>
 
       {/* 6. BOTTOM CALL TO ACTION BANNER */}
